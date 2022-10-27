@@ -11,7 +11,7 @@
             }
         </style>
         
-        
+
         <?php
 		$con = new mysqli("127.0.0.1", "root", " ", "quiz");
         $res = $con->querry("SELECT * FROM questions");
@@ -25,6 +25,12 @@
             
             
             print_r($rows);
-            $rows[%i]
+            $rows[$i]
         }
+        
+        
+        
+        
+        
+        
         

@@ -1,4 +1,3 @@
-
 <html>
 	<head>
         <meta charset="utf-8">
@@ -20,15 +19,16 @@ for($i=0;$i<count($rows);$i++){
 $res2 = $con->query("SELECT description, questions_id FROM answers WHERE questions_id = ".$rows[$i]['id']);
 $rows2 = $res2->fetch_all(MYSQLI_ASSOC);
  for($j=0;$j<count($rows2);$j++){ 
-echo $rows2[$j]["description"].<input type="checkbox" name="'.$i.'.$j.'" value="1"/>'.'<br>';
+echo $rows2[$j]["description"].'<input type="checkbox" name="'.$i.''.$j.'" value="1"/>'.'<br>';
         }; 
- }; 
-?>
-<input type="submit">
-</form>
-</body>
- </html>
+};
+            ?>
+            <input type="submit">
+            </form>
+            </body>
+    </html>
           
+            
         
 	
         

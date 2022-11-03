@@ -1,4 +1,5 @@
 <html>
+<html>
 	<head>
         <meta charset="utf-8">
         <title>quiz</title>
@@ -16,10 +17,10 @@ $res = $con->query("SELECT id, description FROM questions");
  $rows = $res->fetch_all(MYSQLI_ASSOC); 
 for($i=0;$i<count($rows);$i++){
  echo '<b>'.$rows[$i]["description"].'</b>'.'</br>'; 
-$res2 = $con->query("SELECT description, questions_id FROM answers WHERE questions_id = ".$rows[$i]['id']);
+$res2 = $con->query("SELECT description, questions_id, is_right FROM answers WHERE questions_id = ".$rows[$i]['id']);
 $rows2 = $res2->fetch_all(MYSQLI_ASSOC);
  for($j=0;$j<count($rows2);$j++){ 
-echo $rows2[$j]["description"].'<input type="checkbox" name="'.$i.''.$j.'" value="1"/>'.'<br>';
+echo $rows2[$j]["description"].'<input type="checkbox" name="'.$i.'-'.$j.'" value="'.$rows2[$j]["is_right"].'"/>'.'<br>';
         }; 
 };
             ?>
@@ -29,6 +30,7 @@ echo $rows2[$j]["description"].'<input type="checkbox" name="'.$i.''.$j.'" value
     </html>
           
             
+        
         
 	
         
